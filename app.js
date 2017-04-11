@@ -21,13 +21,14 @@ var state = {
         { type: 'stomach ache', remedies: '401' },
         { type: 'depression', remedies: '401' },
         { type: 'insomnia', remedies: '401' },
-    ]
+    ],
 }
+
+globalVitamins = [];
 
 //state functions
 
 function getFoodData(srch, callback, id) {
-    console.log('hello world');
     var params = {
         format: 'JSON',
         api_key: api,
@@ -40,6 +41,16 @@ function getFoodData(srch, callback, id) {
     $.getJSON(baseURL, params, callback);
 }
 
+function getNutrients(n) {
+
+    var vitamins = [];
+    n.report.foods.map(function (i) {
+        vitamins.push(i.nutrients[0].gm);
+    });
+
+    return vitamins;
+}
+
 //render
 
 function renderFoodData(data) {
@@ -47,6 +58,8 @@ function renderFoodData(data) {
     console.log(data);
 
 }
+function renderNutrients(n) {
 
+}
 
 //callbacks
