@@ -18,9 +18,9 @@ var state = {
 function getFoodData(srch, callback) {
     console.log('hello world');
     var params = {
-        query: srch,
-        appKey: api,
+        phrase: srch,
         appId: theAppId,
+        apiKey: api
     }
     $.getJSON(baseURL, params, callback);
 }
@@ -29,7 +29,7 @@ function getFoodData(srch, callback) {
 
 function renderFoodData(data) {
 
-    console.log(data.hits);
+    console.log(data.list.item[0].name);
 
 }
 
