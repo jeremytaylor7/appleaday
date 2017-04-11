@@ -1,7 +1,9 @@
-//api key: IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j
+//api key: fbd5f1e074982e68932f563706a9ae47
+//app key: e5de02a2
 
-var baseURL = 'https://api.nal.usda.gov/ndb/list?format=json&lt=f&sort=n&api_key=IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j'
-var api = 'IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j'
+var baseURL = 'https://api.nutritionix.com/v1_1/search/'
+var api = 'fbd5f1e074982e68932f563706a9ae47'
+var theAppId = 'e5de02a2'
 //state
 
 var state = {
@@ -16,7 +18,9 @@ var state = {
 function getFoodData(srch, callback) {
     console.log('hello world');
     var params = {
-        api_key: api,
+        phrase: srch,
+        appId: theAppId,
+        apiKey: api
     }
     $.getJSON(baseURL, params, callback);
 }
@@ -25,9 +29,7 @@ function getFoodData(srch, callback) {
 
 function renderFoodData(data) {
 
-    data.list.item.map(function (i) {
-        $('body').html('<p>' + i + '</p>');
-    })
+    console.log(data.list.item[0].name);
 
 }
 
