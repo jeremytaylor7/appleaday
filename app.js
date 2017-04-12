@@ -30,7 +30,7 @@ globalVitamins = [];
 
 //state functions
 
-function getFoodData(srch, callback, id) {
+function getFoodData(srch, callback, symptom) {
     var params = {
         format: 'JSON',
         api_key: api,
@@ -69,29 +69,39 @@ function getTopTen(n) {
     state.foodSearch.ntrValue = slice2;
 }
 
-function sortNutrients() {
-
-}
-function symptomSearch(data, symptom) {
-
-    var topTenFoods = [];
-    for (var i = 0; i <= 10; i++) {
-        topTenFoods.push(data.report.foods[i].name);
-    }
-    console.log(topTenFoods);
-}
-
 
 
 //render
 
-function renderFoodData(data) {
+function renderFoodData() {
 
-    console.log(data);
+    foodList = state.foodSearch.name;
+    ntrList = state.foodSearch.ntrValue;
+
+    $('.listfood').text('working');
 
 }
-function renderNutrients(n) {
 
+//event handlers
+
+function handleBtn() {
+    $('button').click(function (e) {
+        e.preventDefault;
+        console.log('hello');
+        val = this.attr('value');
+        state.foodSearch.name.map(function (i) {
+            if (i === val) {
+
+                getFoodData(i.remedies, renderFoodData);
+            }
+        })
+        getFoodData()
+
+
+    })
 }
-
 //callbacks
+
+$(function () {
+    handleBtn;
+})
