@@ -22,6 +22,8 @@ var state = {
         { type: 'depression', remedies: '401' },
         { type: 'insomnia', remedies: '401' },
     ],
+
+    foodSearch: { name: [], ntrValue: [] },
 }
 
 globalVitamins = [];
@@ -41,15 +43,32 @@ function getFoodData(srch, callback, id) {
     $.getJSON(baseURL, params, callback);
 }
 
-function getNutrients(n) {
+function getTopTen(n) {
 
-    var vitamins = [];
-    n.report.foods.map(function (i) {
-        vitamins.push(i.nutrients[0].gm);
-    });
-
-    return vitamins;
+    var foodArray = n.report.foods;
+    for (var i = 0; i <= foodArray.length; i++)
+        if (foodArray[i].nutrients[0].gm > 20) {
+            for (var i = 0; i <= 10; i++) {
+                foodArray.map(function (item) {
+                    state.foodSearch.name.push(item.name);
+                    state.foodSearch.name.push(item.nutrients[0].gm);
+                })
+            }
+        };
 }
+function sortNutrients() {
+
+}
+function symptomSearch(data, symptom) {
+
+    var topTenFoods = [];
+    for (var i = 0; i <= 10; i++) {
+        topTenFoods.push(data.report.foods[i].name);
+    }
+    console.log(topTenFoods);
+}
+
+
 
 //render
 
