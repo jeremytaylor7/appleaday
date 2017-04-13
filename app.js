@@ -23,7 +23,7 @@ var state = {
         { type: 'insomnia', remedies: '401' },
     ],
 
-    foodSearch: { name: [], ntrValue: [] },
+    foodSearch: [],
 }
 
 globalVitamins = [];
@@ -44,29 +44,51 @@ function getFoodData(srch, callback, symptom) {
     $.getJSON(baseURL, params, callback);
 }
 
+/*filter 20 g min. 
+  sort out highest content results
+  get top ten results
+*/
+
+function filterLowNutrients(n) {
+    return n.nutrients[0].gm > 20;
+}
+
+function sortHighestContent(a, b) {
+    return b.nutrients[0].gm - a.nutrients[0].gm;
+}
+
+
+
 function getTopTen(n) {
 
     var theFoodArray = n.report.foods;
 
-    var foodList = state.foodSearch.name;
-    var ntrList = state.foodSearch.ntrValue;
-    theFoodArray.map(function (item) {
-        var ntr = item.nutrients[0].gm;
-        var foodName = item.name;
-        if (item.nutrients[0].gm > 20) {
-            foodList.push(foodName);
-            ntrList.push(ntr);
-            ntrList.sort(function (a, b) {
-                return b - a;
-            })
-        }
+    state.foodSearch = theFoodArray
+        .filter(filterLowNutrients)
+        .sort(sortHighestContent)
+        .slice(0, 10);
 
-    })
-    console.log('hello');
-    var slice1 = foodList.slice(0, 10);
-    var slice2 = ntrList.slice(0, 10);
-    state.foodSearch.name = slice1;
-    state.foodSearch.ntrValue = slice2;
+
+
+
+    /* var foodList = state.foodSearch.name;
+     var ntrList = state.foodSearch.ntrValue;
+     var savedArray = theFoodArray.(function (item) {
+         var ntr = item.nutrients[0].gm;
+         var foodName = item.name;
+         if (item.nutrients[0].gm > 20) {
+             foodList.push(foodName);
+             ntrList.push(ntr);
+             ntrList.sort(function (a, b) {
+                 return b - a;
+             })
+         }
+     });
+     console.log(savedArray);
+     var slice1 = foodList.slice(0, 10);
+     var slice2 = ntrList.slice(0, 10);
+     state.foodSearch.name = slice1;
+     state.foodSearch.ntrValue = slice2;*/
 }
 
 
@@ -75,10 +97,16 @@ function getTopTen(n) {
 
 function renderFoodData() {
 
-    foodList = state.foodSearch.name;
-    ntrList = state.foodSearch.ntrValue;
-
-    $('.listfood').text('working');
+    console.log('rendering')
+    var food = state.foodSearch;
+    var listForFood = ' ';
+    var listForNutrients = ' ';
+    food.forEach(function (i) {
+        listForFood += i.name;
+        listForNutrients += i.nutrients[0].gm;
+    });
+    $('.listFood').html(listForFood);
+    $('.ntrList').html(listForNutrients);
 
 }
 
@@ -86,22 +114,22 @@ function renderFoodData() {
 
 function handleBtn() {
     $('button').click(function (e) {
-        e.preventDefault;
+        e.preventDefault();
         console.log('hello');
-        val = this.attr('value');
-        state.foodSearch.name.map(function (i) {
-            if (i === val) {
-
-                getFoodData(i.remedies, renderFoodData);
+        var val = $(this).attr('value');
+        state.symptoms.forEach(function (i) {
+            if (i.type === val) {
+                console.log('looook');
+                getFoodData(i.remedies, getTopTen);
+                setTimeout(renderFoodData, 5000);
             }
         })
-        getFoodData()
-
-
     })
+
+    console.log('working');
 }
 //callbacks
 
 $(function () {
-    handleBtn;
-})
+    handleBtn();
+});
