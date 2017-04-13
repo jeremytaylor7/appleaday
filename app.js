@@ -25,8 +25,18 @@ var state = {
 
     foodSearch: [],
 }
+var template = '<table>' +
+    '<tr>' +
+    '<th>Food Name</th>' +
+    '<th>Nutrient Content</th>' +
+    '</tr>' +
+    '<tr>' +
+    '<td class="food">"$food"</th>' +
+    '<td class="ntr">"$ntr"</th>' +
+    '</tr>'
 
-globalVitamins = [];
+
+
 
 //state functions
 
@@ -99,14 +109,14 @@ function renderFoodData() {
 
     console.log('rendering')
     var food = state.foodSearch;
-    var listForFood = ' ';
-    var listForNutrients = ' ';
-    food.forEach(function (i) {
-        listForFood += i.name;
-        listForNutrients += i.nutrients[0].gm;
-    });
-    $('.listFood').html(listForFood);
-    $('.ntrList').html(listForNutrients);
+    var listForFood = food.map(function (i) {
+        return template
+            .replace('$food', i.name)
+            .replace('$ntr', i.nutrients[0].gm)
+    })
+    console.log(listForFood);
+    $('.listFood').html(listForFood.join(''));
+    $('.ntrList').html('yoooo');
 
 }
 
