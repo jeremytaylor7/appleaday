@@ -1,16 +1,66 @@
+body {
+    background-color: lightseagreen;
+}
+
 .food {
-    width: 200px;
+    width: 350px;
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: white;
+    font-size: 21px;
 }
 .ntr {
     width: 20px;
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: white;
+
+    
 }
 
 th {
     width: 20px;
+}
+
+.info {
+
+    width: 500px;
+    height: 395px;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list {
+    padding-left: 20px;
+    padding-bottom: 10px;
+
+}
+
+.symptom, .nutrient {
+    padding: 0px;
+
+}
+
+.form-container {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lawngreen;
+    width: 300px;
+    font-size: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    font-size: 12;
+    border-radius: 10px;
 }

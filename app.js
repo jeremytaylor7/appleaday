@@ -5,15 +5,36 @@ var api = 'IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j'
 //state
 /* food id's
 Vitamin C: 401
+Vitamin A: 320
+Magnesium: 304
 
 */
 
 
 var state = {
     symptoms: [
-        { type: 'allergies', remedies: '401' },
-        { type: 'bad eyesight', remedies: '401' },
-        { type: 'headache', remedies: '401' },
+        {
+            type: 'Allergies', remedies: '401',
+            vitamin: 'The recommended nutrient for Allergies is: Vitamin C',
+            description: 'Allergies are the result of histamine, a substance released when foreign particles' +
+            ' invade the body and cause an immune response such as hives, sneezing and watery eyes.Vitamin C, a water- soluble' +
+            ' vitamin your body excretes through the urine, acts as an antihistamine'
+        },
+        {
+            type: 'Bad Eyesight', remedies: '320',
+            vitamin: 'the recommended nutrient for Bad Eyesight is: Vitamin A',
+            description: 'Vitamin A is a great source for improving eyesight' +
+            ' and so is beta carotene, although beta carotene converts to Vitamin A' +
+            ' anyway.'
+        },
+        {
+            type: 'Headache', remedies: '304',
+            vitamin: 'the recommended nutrient for Headaches is: Magnesium',
+            description: 'Magnesium may help to calm nerves during a migraine' +
+            ' and correct any deficiencies that cause headaches, due to' +
+            ' very low levels of magnesium. So say bye to that migraine!'
+        },
+
         { type: 'brain fog', remedies: '401' },
         { type: 'sore throat', remedies: '401' },
         { type: 'asthma', remedies: '401' },
@@ -32,7 +53,7 @@ var template = '<table>' +
     '</tr>' +
     '<tr>' +
     '<td class="food">"$food"</th>' +
-    '<td class="ntr">"$ntr"</th>' +
+    '<td class="ntr">"$ntr"gm</th>' +
     '</tr>'
 
 
@@ -48,7 +69,7 @@ function getFoodData(srch, callback, symptom) {
         sort: 'c',
         subset: '1',
         measureby: 'g',
-        max: 100,
+        max: 800,
 
     }
     $.getJSON(baseURL, params, callback);
@@ -77,28 +98,7 @@ function getTopTen(n) {
         .filter(filterLowNutrients)
         .sort(sortHighestContent)
         .slice(0, 10);
-
-
-
-
-    /* var foodList = state.foodSearch.name;
-     var ntrList = state.foodSearch.ntrValue;
-     var savedArray = theFoodArray.(function (item) {
-         var ntr = item.nutrients[0].gm;
-         var foodName = item.name;
-         if (item.nutrients[0].gm > 20) {
-             foodList.push(foodName);
-             ntrList.push(ntr);
-             ntrList.sort(function (a, b) {
-                 return b - a;
-             })
-         }
-     });
-     console.log(savedArray);
-     var slice1 = foodList.slice(0, 10);
-     var slice2 = ntrList.slice(0, 10);
-     state.foodSearch.name = slice1;
-     state.foodSearch.ntrValue = slice2;*/
+    renderFoodData();
 }
 
 
@@ -106,18 +106,21 @@ function getTopTen(n) {
 //render
 
 function renderFoodData() {
-
-    console.log('rendering')
     var food = state.foodSearch;
     var listForFood = food.map(function (i) {
         return template
             .replace('$food', i.name)
             .replace('$ntr', i.nutrients[0].gm)
     })
-    console.log(listForFood);
-    $('.listFood').html(listForFood.join(''));
+    $('.list').html(listForFood.join(''));
     $('.ntrList').html('yoooo');
 
+}
+
+function renderInfo(symptom, description, nutrient) {
+    $('.symptom').html(symptom);
+    $('.description').html(description);
+    $('.nutrient').html(nutrient);
 }
 
 //event handlers
@@ -129,14 +132,11 @@ function handleBtn() {
         var val = $(this).attr('value');
         state.symptoms.forEach(function (i) {
             if (i.type === val) {
-                console.log('looook');
                 getFoodData(i.remedies, getTopTen);
-                setTimeout(renderFoodData, 5000);
+                renderInfo(i.type, i.description, i.vitamin);
             }
         })
     })
-
-    console.log('working');
 }
 //callbacks
 
