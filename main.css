@@ -5,14 +5,11 @@ p, h2, h3, h4 {
 }
 
 body {
-    background-color: yellowgreen;
+    background-color: #6AB41A;
 }
 
 .intro {
 
-    display: block;
-    width: 700px;
-    height: 50px;
     font-family: 'Indie Flower';
     font-size: 13px;
     text-align: center;
@@ -30,7 +27,8 @@ body {
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color:yellowgreen;
+    background-color: #1A3BB4;
+    color: white;
     font-size: 21px;
 }
 .ntr {
@@ -38,7 +36,9 @@ body {
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: yellowgreen;
+    background-color: #1A3BB4;
+    color: white;
+    font-size: 20px;
 
     
 }
@@ -50,9 +50,11 @@ th {
 .info {
     display: none;
     width: 500px;
-    height: 395px;
+    height: 395;
     border: 2px solid grey;
     border-radius: 10px;
+    background-color: #4C45EA;
+    color: white;
 }
 
 .container {
@@ -77,22 +79,22 @@ th {
     border: 1px solid black;
     padding: 20px;
     border-radius: 10px;
-    background-color: black;
+    background-color: #5F8139;
     width: 500px;
     font-size: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 250px;
 }
 
-button {
+ .search > button {
     width: 100px;
     height: 40px;
     font-size: 14;
     border-radius: 20px;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: #4C45EA;    
     font-family: 'Indie Flower', cursive;
+    margin: 1px;
 }
 
 .loading{
@@ -104,17 +106,34 @@ table {
     font-weight: 500;
 }
 
-img{
+.intro > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: 300px;
     
 }
 .quote {
 
     font-size: 15px;
+}
+
+.searchAgain {
+    display: none;
+    width: 100px;
+    height: 40px;
+    padding-top: 5px;
+    font-size: 15;
+    font-weight: 20px;
+    border-radius: 20px;
+    color: black;
+    margin-left: 180px;
+    background-color: orangered;
+    font-family: 'Indie Flower', cursive;
+
+}
+
 }
 
 

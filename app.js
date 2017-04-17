@@ -191,9 +191,12 @@ function hideLoading() {
 //event handlers
 
 function handleBtn() {
-    $('button').click(function (e) {
+    $('.search > button').click(function (e) {
         e.preventDefault();
         $('.list').hide();
+        $('.intro').hide();
+        $('.form-container').hide();
+        $('.searchAgain').show();
         console.log('hello');
         var val = $(this).attr('value');
         state.symptomChoice = state.symptoms.find(function (item) {
