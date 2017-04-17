@@ -192,8 +192,8 @@ function hideLoading() {
 
 function handleBtn() {
     $('button').click(function (e) {
-        $('.list').hide();
         e.preventDefault();
+        $('.list').hide();
         console.log('hello');
         var val = $(this).attr('value');
         state.symptomChoice = state.symptoms.find(function (item) {

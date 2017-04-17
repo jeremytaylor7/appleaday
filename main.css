@@ -1,13 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+p, h2, h3, h4 {
+    font-family: 'Indie Flower', cursive;
+}
+
 body {
     background-color: yellowgreen;
 }
+
+.intro {
+
+    display: block;
+    width: 700px;
+    height: 50px;
+    font-family: 'Indie Flower';
+    font-size: 13px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0px;
+
+}
+
+
 
 .food {
     width: 350px;
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: white;
+    background-color:yellowgreen;
     font-size: 21px;
 }
 .ntr {
@@ -15,7 +38,7 @@ body {
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: white;
+    background-color: yellowgreen;
 
     
 }
@@ -29,6 +52,7 @@ th {
     width: 500px;
     height: 395px;
     border: 2px solid grey;
+    border-radius: 10px;
 }
 
 .container {
@@ -40,7 +64,7 @@ th {
 
 .list {
     padding-left: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 1px;
 
 }
 
@@ -51,24 +75,46 @@ th {
 
 .form-container {
     border: 1px solid black;
+    padding: 20px;
     border-radius: 10px;
     background-color: black;
     width: 500px;
     font-size: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 250px;
 }
 
 button {
     width: 100px;
     height: 40px;
-    font-size: 12;
+    font-size: 14;
     border-radius: 20px;
     color: white;
     background-color: black;
+    font-family: 'Indie Flower', cursive;
 }
 
 .loading{
     font-size: 30px;
 }
+
+table {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 500;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    
+}
+.quote {
+
+    font-size: 15px;
+}
+
 
