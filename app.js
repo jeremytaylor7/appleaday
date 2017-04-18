@@ -4,6 +4,8 @@ var baseURL = 'https://api.nal.usda.gov/ndb/nutrients/?'
 var api = 'IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j'
 //state
 /* food id's
+Calcium: 301
+Iron: 303
 Vitamin C: 401
 Vitamin A: 320
 Magnesium: 304
@@ -77,6 +79,17 @@ var state = {
             description: 'Studies have shown that deficiencies in the nutrient Magnesium can be related to' +
             ' insomia or difficult falling asleep quickly.'
         },
+        {
+            type: 'Weight Gain', remedies: '301', vitamin: 'the recommended nutrient for Weight Gain is: Calcium',
+            description: 'Studies have shown that calcium aids in the speeding up of the' +
+            ' metabolism, which is the process responsible for breaking down fat into energy. '
+        },
+        {
+            type: 'ADHD', remedies: '303', vitamin: 'the recommended nutrient for ADHD is: Iron',
+            description: 'Studies have shown that for those who experience ADHD have' +
+            ' a deficiency in the mineral Iron, replenishing this deficiency can improve' +
+            ' symptoms.'
+        }
     ],
 
     symptomChoice: '',
@@ -87,12 +100,12 @@ var state = {
 }
 var template = '<table>' +
     '<tr>' +
-    '<th>Food Name</th>' +
-    '<th>Nutrient Content</th>' +
+    '<th class="th1">Food Name</th>' +
+    '<th class="th2">Nutrient Content</th>' +
     '</tr>' +
     '<tr>' +
-    '<td class="food">"$food"</th>' +
-    '<td class="ntr">"$ntr"gm</th>' +
+    '<td class="food">$food</th>' +
+    '<td class="ntr">$ntrgm</th>' +
     '</tr>'
 
 
@@ -157,7 +170,7 @@ function render(symptom, description, nutrient) {
 
 function renderLoadingUI() {
     if (state.loading) {
-        $('.loading').html('LOADING...')
+        $('.loading').html('LOADING..')
     }
     else if (!state.loading) {
         $('.loading').hide();
