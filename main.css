@@ -15,7 +15,7 @@ body {
 }
 
 .intro {
-    display: block;
+
     font-family: 'Indie Flower';
     font-size: 13px;
     text-align: center;
@@ -105,7 +105,7 @@ th {
 }
 
 .loading{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 table {
@@ -113,7 +113,7 @@ table {
     font-weight: 500;
 }
 
-.intro > img {
+.col-3 > .intro > img {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
