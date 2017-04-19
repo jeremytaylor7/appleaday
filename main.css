@@ -1,29 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Source+Serif+Pro');
 
+/*
+color codes:
+blue: #1A3BB4;  
+
+ */
 html {
     height: 100%;
     width: 100%;
 
 }
 
-p, h2, h3, h4 {
-    font-family: 'Indie Flower', cursive;
-}
 
 body {
     background-color: #6AB41A;
 }
 
+.logo {
+
+    font-family: 'Pacifico';
+    text-align: center;
+}
+
 .intro {
 
-    font-family: 'Indie Flower';
+    font-family: 'Pacifico';
+    color: black;
     font-size: 13px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 0px;
 
+}
+
+.intro > p {
+
+    font-size: 20px;
+    font-family: 'Source Serif Pro';
 }
 
 
@@ -36,6 +53,9 @@ body {
     background-color: #1A3BB4;
     color: white;
     font-size: 21px;
+    font-family: 'Source Serif Pro';
+    margin-left: auto;
+    margin-right: auto;
 }
 .ntr {
     width: 20px;
@@ -45,8 +65,9 @@ body {
     background-color: #1A3BB4;
     color: white;
     font-size: 20px;
-
-    
+    font-family: 'Source Serif Pro';
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th {
@@ -59,8 +80,11 @@ th {
     height: 395;
     border: 2px solid grey;
     border-radius: 10px;
-    background-color: #1A3BB4;
+    background-color: #5F8139;
     color: white;
+    font-family: 'Source Serif Pro';
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container {
@@ -74,6 +98,8 @@ th {
     padding-left: 20px;
     padding-bottom: 1px;
     padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -87,20 +113,21 @@ th {
     padding: 20px;
     border-radius: 10px;
     background-color: #5F8139;
-    width: 350px;
+    width: 500px;
     font-size: 0;
     margin-left: auto;
     margin-right: auto;
 }
 
  .search > button {
-    width: 100px;
-    height: 40px;
+    width: 110px;
+    box-shadow: 2px 2px black;
+    height: 50px;
     font-size: 14;
-    border-radius: 20px;
+    border-radius: 13px;
     color: white;
-    background-color: #1A3BB4;    
-    font-family: 'Indie Flower', cursive;
+    background-color: saddlebrown;    
+    font-family: 'Source Serif Pro';
     margin: 1px;
 }
 
@@ -113,7 +140,7 @@ table {
     font-weight: 500;
 }
 
-.col-3 > .intro > img {
+.a > .intro > img {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
