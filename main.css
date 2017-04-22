@@ -50,34 +50,31 @@ body {
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #1A3BB4;
+    background-color: #5F8139;
     color: white;
     font-size: 21px;
     font-family: 'Source Serif Pro';
-    margin-left: auto;
-    margin-right: auto;
 }
 .ntr {
     width: 20px;
     height: 20px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #1A3BB4;
+    background-color: #5F8139;
     color: white;
     font-size: 20px;
     font-family: 'Source Serif Pro';
-    margin-left: auto;
-    margin-right: auto;
 }
 
 th {
     width: 20px;
-}
+    font-family: 'Source Serif Pro';
+    }
 
 .info {
     display: none;
-    width: 500px;
-    height: 395;
+    width: auto;
+    height: auto;
     border: 2px solid grey;
     border-radius: 10px;
     background-color: #5F8139;
@@ -109,6 +106,7 @@ th {
 }
 
 .form-container {
+    width: auto;
     border: 1px solid black;
     padding: 20px;
     border-radius: 10px;
@@ -119,7 +117,7 @@ th {
     margin-right: auto;
 }
 
- .search > button {
+ .btn-container > button {
     width: 110px;
     box-shadow: 2px 2px black;
     height: 50px;
@@ -161,11 +159,12 @@ table {
     padding-top: 5px;
     font-size: 15;
     font-weight: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     color: black;
+    margin-top: 10px;
     margin-left: 180px;
-    background-color: orangered;
-    font-family: 'Indie Flower', cursive;
+    background-color: #5F8139;
+    font-family: 'Pacifico';
 
 }
 

@@ -108,6 +108,8 @@ var template = '<table>' +
     '<td class="ntr">$ntrgm</th>' +
     '</tr>'
 
+var buttonTemplate = '<button value="type">$symptom</button>'
+
 
 
 
@@ -197,6 +199,17 @@ function renderInfo(symptom, description, nutrient) {
     $('.nutrient').html(nutrient);
 }
 
+function renderButton() {
+    var symtypes = state.symptoms;
+    var buttonList = symtypes.map(function (item) {
+        return buttonTemplate
+            .replace('type', item.type)
+            .replace('$symptom', item.type);
+    })
+    $('.btn-container').html(buttonList.join(''));
+
+}
+
 function hideLoading() {
     $('.loading').hide();
 }
@@ -204,7 +217,7 @@ function hideLoading() {
 //event handlers
 
 function handleBtn() {
-    $('.search > button').click(function (e) {
+    $('.btn-container > button').click(function (e) {
         e.preventDefault();
         $('.list').hide();
         $('.intro').hide();
@@ -227,5 +240,6 @@ function handleBtn() {
 //callbacks
 
 $(function () {
+    renderButton();
     handleBtn();
 });
