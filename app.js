@@ -199,13 +199,16 @@ function renderInfo(symptom, description, nutrient) {
     $('.nutrient').html(nutrient);
 }
 
-function renderButton() {
+function renderButton(item, index) {
+    return buttonTemplate
+        .replace('type', item.type)
+        .replace('$symptom', item.type);
+}
+
+function renderButtons() {
     var symtypes = state.symptoms;
-    var buttonList = symtypes.map(function (item) {
-        return buttonTemplate
-            .replace('type', item.type)
-            .replace('$symptom', item.type);
-    })
+    var buttonList = symtypes
+        .map(renderButton)
     $('.btn-container').html(buttonList.join(''));
 
 }
@@ -240,6 +243,6 @@ function handleBtn() {
 //callbacks
 
 $(function () {
-    renderButton();
+    renderButtons();
     handleBtn();
 });
