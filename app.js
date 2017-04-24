@@ -108,7 +108,7 @@ var template = '<table>' +
     '<td class="ntr">$ntrgm</th>' +
     '</tr>'
 
-var buttonTemplate = '<button value="type">$symptom</button>'
+var buttonTemplate = '<button value="type" class="col-3">$symptom</button>'
 
 
 
@@ -205,10 +205,21 @@ function renderButton(item, index) {
         .replace('$symptom', item.type);
 }
 
+function groupIntoRows(btn, index) {
+    if (index === 0) {
+        return "<div class='row'>" + btn;
+    }
+    else if (index % 4 === 0) {
+        return "</div><div class='row'>" + btn;
+    }
+    return btn;
+}
+
 function renderButtons() {
     var symtypes = state.symptoms;
     var buttonList = symtypes
         .map(renderButton)
+        .map(groupIntoRows);
     $('.btn-container').html(buttonList.join(''));
 
 }
