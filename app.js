@@ -24,7 +24,7 @@ var state = {
             type: 'Allergies', remedies: '401',
             vitamin: 'The recommended nutrient for Allergies is: Vitamin C',
             description: 'Allergies are the result of histamine, a substance released when foreign particles' +
-            ' invade the body and cause an immune response such as hives, sneezing and watery eyes.Vitamin C, a water- soluble' +
+            ' invade the body and cause an immune response such as hives, sneezing and watery eyes. Vitamin C, a water- soluble' +
             ' vitamin your body excretes through the urine, acts as an antihistamine'
         },
         {
@@ -105,7 +105,7 @@ var template = '<table>' +
     '</tr>' +
     '<tr>' +
     '<td class="food">$food</th>' +
-    '<td class="ntr">$ntrgm</th>' +
+    '<td class="ntr">$ntrmg</th>' +
     '</tr>'
 
 var buttonTemplate = '<button value="type" class="col-3">$symptom</button>'
@@ -231,7 +231,7 @@ function hideLoading() {
 //event handlers
 
 function handleBtn() {
-    $('.btn-container > button').click(function (e) {
+    $('.btn-container > .row > button').click(function (e) {
         e.preventDefault();
         $('.list').hide();
         $('.intro').hide();
