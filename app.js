@@ -152,7 +152,7 @@ function getTopFoods(n) {
     state.foodSearch = theFoodArray
         .filter(filterLowNutrients)
         .sort(sortHighestContent)
-        .slice(0, 20);
+        .slice(0, 30);
     renderLoadingUI();
     renderFoodData();
     state.loading = false;

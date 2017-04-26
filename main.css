@@ -53,8 +53,6 @@ body {
     font-family: 'Source Serif Pro';
 }
 .ntr {
-    width: 20px;
-    height: 20px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: #5F8139;
@@ -70,8 +68,6 @@ th {
 
 .info {
     display: none;
-    width: auto;
-    height: auto;
     border: 2px solid grey;
     border-radius: 10px;
     background-color: #5F8139;
@@ -82,8 +78,6 @@ th {
 }
 
 .container {
-    width: 500px;
-    height: 500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -104,11 +98,8 @@ th {
 
 .form-container {
 
+    width: 50%;
     border: 1px solid black;
-    width: 600px;
-    height: auto;
-    max-width: 700px;
-    max-height: 400px;
     padding: 20px;
     border-radius: 10px;
     background-color: #5F8139;
@@ -178,11 +169,6 @@ table {
     background-color: lightgreen;
 }
 */
-
-.btn-container > div {
-    width: 450px;
-    height: 10px;
-}
 
 
 
