@@ -98,10 +98,7 @@ var state = {
 
     loading: false,
 }
-var template = '<table>' +
-    '<tr>' +
-    '<th class="th1">Food Name</th>' +
-    '<th class="th2">Nutrient Content</th>' +
+var template = '<tr>' +
     '</tr>' +
     '<tr>' +
     '<td class="food">$food</th>' +
@@ -187,10 +184,14 @@ function renderFoodData() {
             .replace('$food', i.name)
             .replace('$ntr', i.nutrients[0].gm)
     })
-    $('.list').html(listForFood.join(''));
-    $('.ntrList').html('yoooo');
-
-
+    var foodListJoined = listForFood.join('');
+    $('.list-container').html()
+    $('.list').html('<table>' +
+        '<tr>' +
+        '<th class="th1">Food Name</th>' +
+        '<th class="th2">Nutrient Content</th>' +
+        '</tr>' +
+        foodListJoined + '</table>');
 }
 
 function renderInfo(symptom, description, nutrient) {
@@ -233,11 +234,13 @@ function hideLoading() {
 function handleBtn() {
     $('.btn-container > .row > button').click(function (e) {
         e.preventDefault();
+        $('tr').hide();
+        $('th').hide();
         $('.list').hide();
         $('.intro').hide();
+        $('header > img').hide();
         $('.form-container').hide();
         $('.searchAgain').show();
-        console.log('hello');
         var val = $(this).attr('value');
         state.symptomChoice = state.symptoms.find(function (item) {
             return item.type === val;

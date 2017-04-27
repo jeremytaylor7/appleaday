@@ -15,10 +15,35 @@ body {
 }
 
 .logo {
-
+    font-size: 40px;
     font-family: 'Pacifico';
     text-align: center;
+    border: 1px solid black;
     
+    
+}
+
+footer > h5 {
+    background-color: saddlebrown;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px;
+    border: 1px solid black;
+}
+
+footer {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+h1 {
+    background-color: saddlebrown;
+    border-radius: 10px;
+    box-shadow: 2px 2px;
+    width: 20px;
+    border: 1px solid black;
 }
 
 .intro {
@@ -43,14 +68,15 @@ body {
 
 
 .food {
-    width: 350px;
-    height: 20px;
+    width: 93%;
+    height: 40px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: #5F8139;
     color: white;
     font-size: 21px;
     font-family: 'Source Serif Pro';
+
 }
 .ntr {
     border: 1px solid black;
@@ -98,7 +124,7 @@ th {
 
 .form-container {
 
-    width: 50%;
+    max-width: 500px;
     border: 1px solid black;
     padding: 20px;
     border-radius: 10px;
@@ -107,6 +133,13 @@ th {
     margin-left: auto;
     margin-right: auto;
 }
+
+.btn-container > .div {
+    padding-left: 30px;
+
+}
+
+
 
 
  .btn-container > div > button {
@@ -130,13 +163,11 @@ table {
     font-weight: 500;
 }
 
-.row > .intro > img {
+header > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: auto;
-    height: 300px;
-
+    max-width: 300px;
     
 }
 
@@ -147,19 +178,26 @@ table {
 
 .searchAgain {
     display: none;
-    width: 100px;
+    width: 200px;
     height: 40px;
     padding-top: 5px;
     font-size: 15;
     font-weight: 20px;
     border-radius: 10px;
     color: black;
-    margin-top: 10px;
-    margin-left: 180px;
+    margin-top: 55px;
     background-color: #5F8139;
     font-family: 'Pacifico';
 
 }
+
+.reSearch {
+    width: 250px;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /*.container {
 
@@ -170,6 +208,9 @@ table {
 }
 */
 
+.btn-container > .row {
+
+}
 
 
 
