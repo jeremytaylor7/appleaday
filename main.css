@@ -11,20 +11,26 @@ blue: #1A3BB4;
 
 
 body {
-    background-color: #6AB41A;
+    background-color: white;
 }
 
 .logo {
     font-size: 40px;
-    font-family: 'Pacifico';
+    font-family: ;
     text-align: center;
     border: 1px solid black;
     
     
 }
 
+.description {
+
+    font-size: 30px;
+    text-align: center;
+}
+
 footer > h5 {
-    background-color: saddlebrown;
+    background-color: cadetblue;
     text-align: center;
     border-radius: 10px;
     box-shadow: 2px 2px;
@@ -39,8 +45,7 @@ footer {
 }
 
 h1 {
-    background-color: saddlebrown;
-    border-radius: 10px;
+    background-color: dodgerblue;
     box-shadow: 2px 2px;
     width: 20px;
     border: 1px solid black;
@@ -48,7 +53,7 @@ h1 {
 
 .intro {
 
-    font-family: 'Pacifico';
+    font-family: ;
     color: black;
     font-size: 13px;
     text-align: center;
@@ -127,8 +132,7 @@ th {
     max-width: 500px;
     border: 1px solid black;
     padding: 20px;
-    border-radius: 10px;
-    background-color: #5F8139;
+    background-color: cadetblue;
     font-size: 0;
     margin-left: auto;
     margin-right: auto;
@@ -147,9 +151,8 @@ th {
     box-shadow: 2px 2px black;
     height: 50px;
     font-size: 14;
-    border-radius: 13px;
     color: white;
-    background-color: saddlebrown;    
+    background-color: dodgerblue;
     font-family: 'Source Serif Pro';
     margin: 1px;
 }
@@ -167,7 +170,7 @@ header > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 300px;
+    max-width: 50px;
     
 }
 
