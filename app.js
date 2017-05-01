@@ -169,7 +169,7 @@ function render(symptom, description, nutrient) {
 
 function renderLoadingUI() {
     if (state.loading) {
-        $('.loading').html('LOADING..')
+        $('.loading').html('<img class="loadingSvg" src="default.svg">')
     }
     else if (!state.loading) {
         $('.loading').hide();
