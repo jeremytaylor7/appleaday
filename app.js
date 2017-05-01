@@ -101,8 +101,8 @@ var state = {
 var template = '<tr>' +
     '</tr>' +
     '<tr>' +
-    '<td class="food">$food</th>' +
-    '<td class="ntr">$ntrmg</th>' +
+    '<td class="food">$food</td>' +
+    '<td class="ntr">$ntrmg</td>' +
     '</tr>'
 
 var buttonTemplate = '<button value="type" class="col-3">$symptom</button>'
@@ -234,6 +234,7 @@ function hideLoading() {
 function handleBtn() {
     $('.btn-container > .row > button').click(function (e) {
         e.preventDefault();
+        $('.about').hide();
         $('tr').hide();
         $('th').hide();
         $('.list').hide();

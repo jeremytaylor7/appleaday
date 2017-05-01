@@ -1,36 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Source+Serif+Pro');
-
-/*
-color codes:
-blue: #1A3BB4;  
-
- */
-
-
-
 body {
-    background-color: white;
+    background-color: #F1D2A0;
+    color: #140F05;
+    font-family: 'Oswald', sans-serif;
 }
 
 .logo {
     font-size: 40px;
-    font-family: ;
     text-align: center;
-    border: 1px solid black;
-    
-    
+    border: 1px solid black;   
 }
 
-.description {
+.about {
 
     font-size: 30px;
     text-align: center;
 }
 
 footer > h5 {
-    background-color: cadetblue;
+    background-color: #C1DB11;
     text-align: center;
     border-radius: 10px;
     box-shadow: 2px 2px;
@@ -45,15 +32,14 @@ footer {
 }
 
 h1 {
-    background-color: dodgerblue;
+    background-color: #C1DB11;
     box-shadow: 2px 2px;
     width: 20px;
     border: 1px solid black;
+    padding: 10px;
 }
 
 .intro {
-
-    font-family: ;
     color: black;
     font-size: 13px;
     text-align: center;
@@ -75,37 +61,38 @@ h1 {
 .food {
     width: 93%;
     height: 40px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #5F8139;
-    color: white;
-    font-size: 21px;
-    font-family: 'Source Serif Pro';
+    color: #140F05;
+    font-size: 25px;
+    padding: 10px;
 
 }
 .ntr {
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #5F8139;
-    color: white;
+    color: #140F05;
     font-size: 20px;
-    font-family: 'Source Serif Pro';
+}
+
+tr {
+    background-color: #AA8454;
+    font-family: 'Oswald', 'sans serif';
+
 }
 
 th {
     width: 20px;
-    font-family: 'Source Serif Pro';
+    font-family: 'Oswald', 'sans serif';
+    font-size: 18px;
+    background-color: #C1DB11;
     }
+    
 
 .info {
     display: none;
-    border: 2px solid grey;
-    border-radius: 10px;
-    background-color: #5F8139;
-    color: white;
-    font-family: 'Source Serif Pro';
+    color: #140F05;
+    font-family: 'Oswald', 'sans serif';
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    font-size: 25px;
 }
 
 .container {
@@ -128,33 +115,24 @@ th {
 }
 
 .form-container {
-
-    max-width: 500px;
-    border: 1px solid black;
     padding: 20px;
-    background-color: cadetblue;
     font-size: 0;
     margin-left: auto;
     margin-right: auto;
 }
 
-.btn-container > .div {
-    padding-left: 30px;
+.btn-container > div {
+    margin: 0 auto;    
 
 }
 
-
-
-
  .btn-container > div > button {
-    width: 100px;
-    box-shadow: 2px 2px black;
+    box-shadow: 2px 2px #140F05;
     height: 50px;
-    font-size: 14;
-    color: white;
-    background-color: dodgerblue;
-    font-family: 'Source Serif Pro';
-    margin: 1px;
+    font-size: 22;
+    color: #140F05;
+    background-color: #AA8454;
+    font-family: 'Oswald', 'sans serif';
 }
 
 .loading{
@@ -170,7 +148,7 @@ header > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 50px;
+    max-width: 200px;
     
 }
 
@@ -200,21 +178,3 @@ header > img {
     margin-left: auto;
     margin-right: auto;
 }
-
-
-/*.container {
-
-    
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: lightgreen;
-}
-*/
-
-.btn-container > .row {
-
-}
-
-
-
-
