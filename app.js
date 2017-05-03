@@ -150,9 +150,10 @@ function getTopFoods(n) {
         .filter(filterLowNutrients)
         .sort(sortHighestContent)
         .slice(0, 30);
+    state.loading = false;
+
     renderLoadingUI();
     renderFoodData();
-    state.loading = false;
 }
 
 
@@ -185,13 +186,14 @@ function renderFoodData() {
             .replace('$ntr', i.nutrients[0].gm)
     })
     var foodListJoined = listForFood.join('');
-    $('.list-container').html()
-    $('.list').html('<table>' +
-        '<tr>' +
-        '<th class="th1">Food Name</th>' +
-        '<th class="th2">Nutrient Content</th>' +
-        '</tr>' +
-        foodListJoined + '</table>');
+    if (!state.loading) {
+        $('.list').html('<table>' +
+            '<tr>' +
+            '<th class="th1">Food Name</th>' +
+            '<th class="th2">Nutrient Content</th>' +
+            '</tr>' +
+            foodListJoined + '</table>');
+    }
 }
 
 function renderInfo(symptom, description, nutrient) {
