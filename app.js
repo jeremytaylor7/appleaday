@@ -1,7 +1,7 @@
 //api key: IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j
 
 var baseURL = 'https://api.nal.usda.gov/ndb/nutrients/?'
-var api = 'IxsqmsuTjedK9mqAwWxyW2Kn1EYBbi4uTwy4wQ7j'
+var api = 'jx2lgyr6ppw8XIdw92cyB8w6OfZMwRgJbEJzBywc'
 //state
 /* food id's
 Calcium: 301
